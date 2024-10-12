@@ -9,7 +9,7 @@ opinionated in that it makes `bash` behave the same as `sh` and `zsh` by having
 `.bash_profile` `source` `.bashrc` so that `.bashrc` is `source`d for _all_
 interactive `bash` shells.
 
-sample usage:
+### sample usage
 
 ```bash
 cd ~/dotfiles # assumes your `dotfiles` repo is already a `stow` style repo
@@ -31,8 +31,15 @@ mkdir -p shellrc.d/.rc.d/ shellrc.d/.login.d/
 # if `stow`ing `sh/` `bash/` or `zsh/` also make sure to `stow shellrc.d/`
 ```
 
+### structure
+
 - `shellrc.d/login.d/`: generic interactive login shell configuration
 - `shellrc.d/rc.d/`: generic interactive non-login shell configuration
 - `sh/.shrc.d/`: interactive non-login `sh` configuration
 - `bash/.bashrc.d/`: interactive non-login `bash` configuration
 - `zsh/.zshrc.d/`: interactive non-login `zsh` configuration
+
+### possible future work
+
+- add shell specific login directories
+- add logout
