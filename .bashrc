@@ -23,7 +23,7 @@ fi
 
 RCD_DIR="$HOME/.bashrc.d"
 if [ -d "$RCD_DIR" ]; then
-  for f in "$RCD_DIR"/*.sh; do
+  for f in "$RCD_DIR"/*.bash; do
     # shellcheck disable=SC1090
     [ -r "$f" ] && . "$f"
   done

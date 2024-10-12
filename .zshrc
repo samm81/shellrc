@@ -10,7 +10,7 @@ fi
 
 RCD_DIR="$HOME/.zshrc.d"
 if [ -d "$RCD_DIR" ]; then
-  for f in "$RCD_DIR"/*.sh; do
+  for f in "$RCD_DIR"/*.zsh; do
     # shellcheck disable=SC1090
     [ -r "$f" ] && . "$f"
   done
