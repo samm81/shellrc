@@ -1,4 +1,8 @@
-# run for interactive non-login shells
+# `source`d by default for interactive non-login `bash` shells
+# we also `source` this file in `.bash_profile` so that it is also `source`d
+# for login shells, so as a result...
+
+# `sourced` for *all* interacative `bash` shells
 
 # this file is also sourced by some apparently interactive shells such as `scp`
 # and `rcp` that can't tolerate any output. so make sure this doesn't display

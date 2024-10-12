@@ -1,4 +1,4 @@
-# run for interactive login shells
+# `source`d for interactive *login* `zsh` shells
 
 LOGIND_DIR="$HOME/.login.d"
 if [ -d "$LOGIND_DIR" ]; then
@@ -8,9 +8,4 @@ if [ -d "$LOGIND_DIR" ]; then
   done
 fi
 
-# explicitly load our rc file so that interactive login shells are just
-# enhanced interative shells
-RC_FILE="$HOME/.zshrc"
-# `setopt nologin` because our `.zshrc` explicitly aborts if it detects that it
-# is a login shell in order to match the behavior of other shells (`bash` `sh`)
-[ -f "$RC_FILE" ] && [ -r "$RC_FILE" ] && setopt nologin && . "$RC_FILE"
+# no need to explicitly `source` our rc file, `zsh` already does this

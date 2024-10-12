@@ -1,4 +1,7 @@
-# `source`d for *all* interactive `zsh` shells
+# configured as `ENV` target for `sh` by `.profile` so is `source`d for *all*
+# interactive `sh` shells
+
+# vim: ft=sh
 
 RCD_DIR="$HOME/.rc.d"
 if [ -d "$RCD_DIR" ]; then
@@ -8,7 +11,7 @@ if [ -d "$RCD_DIR" ]; then
   done
 fi
 
-RCD_DIR="$HOME/.zshrc.d"
+RCD_DIR="$HOME/.shrc.d"
 if [ -d "$RCD_DIR" ]; then
   for f in "$RCD_DIR"/*.sh; do
     # shellcheck disable=SC1090

@@ -1,5 +1,5 @@
-# run for interactive login shells
-# or non-interactive shells with the `--login` option
+# `source`d for interactive *login* `bash` shells
+# (or non-interactive shells with the `--login` option)
 
 LOGIND_DIR="$HOME/.login.d"
 if [ -d "$LOGIND_DIR" ]; then
@@ -9,7 +9,7 @@ if [ -d "$LOGIND_DIR" ]; then
   done
 fi
 
-# explicitly load our rc file so that interactive login shells are just
+# explicitly `source` our rc file so that interactive login shells are just
 # enhanced interative shells
 RC_FILE="$HOME/.bashrc"
 # shellcheck disable=SC1090
