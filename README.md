@@ -5,6 +5,11 @@ to a `stow` style `dotfiles` repository, then `ln`d into respective subfolders.
 
 [1]: https://github.com/chr4/shellrc
 
+opinionated in that interactive login shells are configured to also load
+interactive non-login shell configuration, so that interactive login shells are
+just enhanced interactive non-login shells (this is not default behavior
+outside of `zsh`)
+
 sample usage:
 
 ```bash
