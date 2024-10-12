@@ -1,29 +1,30 @@
-# Shell dotfiles, conf.d stype, for multiple shells
+# unfied shell dotfile solution (`bash` `zsh`)
 
-I don't like messy dotfiles. You can [read here](https://chr4.org/blog/2014/09/10/conf-dot-d-like-directories-for-zsh-slash-bash-dotfiles) why.
+forked from [chr4/shellrc][1] and modified to be able to be `git submodule`d in
+to a `stow` style `dotfiles` repository, then `ln`d into respective subfolders.
 
-## Features
+[1]: https://github.com/chr4/shellrc
 
-* `~/.shellrc/rc.d` as an include.d style directory for scripts used by all shells
-* `~/.shellrc/bashrc.d` as an include.d style directory for bashrc scripts
-* `~/.shellrc/zsh.d` as an include.d style directory for zshrc scripts
-* `~/.shellrc/login.d` as an include.d style directory for shared zlogin/bash\_profile scripts
-* git repository information (current branch, current status) without external dependencies
-* colorful prompt
-* shared history for all shells
-
-## Installation
+sample usage:
 
 ```bash
-cd
-git clone git://github.com/chr4/shellrc.git .shellrc
+cd ~/dotfiles # assumes your `dotfiles` repo is already a `stow` style repo
+git submodule add https://github.com/samm81/shellrc.git shellrc
 
-# bash config
-ln -sf .shellrc/bashrc .bashrc
-ln -sf .shellrc/bash_profile .bash_profile
-ln -sf .shellrc/inputrc .inputrc
+mkdir -p bash/.bashrc.d/
+ln -s ../shellrc/.bash_profile bash/
+ln -s ../shellrc/.bashrc bash/
 
-# zsh config
-ln -sf .shellrc/zshrc .zshrc
-ln -sf .shellrc/zlogin .zlogin
+mkdir -p zsh/.zshrc.d/
+ln -s ../shellrc/.zprofile zsh/
+ln -s ../shellrc/.zshrc zsh/
+
+mkdir -p shellrc.d/.rc.d/ shellrc.d/.login.d/
+# `stow` away
+# if `stow`ing `bash/` or `zsh/` also make sure to `stow shellrc.d/`
 ```
+
+- `shellrc.d/login.d/`: generic interactive login shell configuration
+- `shellrc.d/rc.d/`: generic interactive non-login shell configuration
+- `bash/.bashrc.d/`: interactive non-login `bash` configuration
+- `zsh/.zshrc.d/`: interactive non-login `zsh` configuration
